@@ -9,6 +9,7 @@ Frontend
 + Jodit React
 + DaisyUI
 + React Icons
++ React Hot Toast
 
 Backend
 ---
