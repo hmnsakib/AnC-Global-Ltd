@@ -2,15 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 require("dotenv").config();
+
 const app = express();
+const port = process.env.PORT || 8000;
 
-const port = process.env.PORT || 5000;
-
-//middleware
+//----------middleware----------
 app.use(cors());
 app.use(express.json());
 
-//mongoDB
+//----------mongo db----------
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.1yvkcvu.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -26,6 +26,24 @@ async function run() {
     try {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
+
+        //----------db & collection----------
+        const productCollection = client
+            .db("productsDb")
+            .collection("products");
+
+        //----------http methods----------
+        app.get("/", (req, res) => {
+            res.send(" This is AnC Global Ltd server side");
+        });
+
+        app.post("/addproduct", async (req, res) => {
+            const newProduct = req.body;
+            console.log("product added:", newProduct);
+            const result = await productCollection.insertOne(newProduct);
+            res.send(result);
+        });
+
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
         console.log(
@@ -33,21 +51,12 @@ async function run() {
         );
     } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+        //await client.close();
     }
 }
 run().catch(console.dir);
 
-// server home
-app.get("/", (req, res) => {
-    res.send("AnC Global Server");
-});
-//get all products
-//post a product
-//get all blog
-//post  a blog
-
+//----------server listener----------
 app.listen(port, () => {
-    //for console output
-    console.log(`Anc Server is running on port: ${port}`);
+    console.log(`AnC server running on port :${port}`);
 });
