@@ -24,7 +24,7 @@ const Sidebar2 = () => {
                     </NavLink>
                 </li>
 
-                <li className="m-4">
+                {/* <li className="m-4">
                     <NavLink
                         //
                         to="users"
@@ -41,7 +41,7 @@ const Sidebar2 = () => {
                     >
                         Contact Info
                     </NavLink>
-                </li>
+                </li> */}
             </ul>
         </div>
     );
