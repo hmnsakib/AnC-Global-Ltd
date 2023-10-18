@@ -53,7 +53,6 @@ async function run() {
         app.delete("/products/:id", async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };
-            //console.log(query);
             const result = await productCollection.deleteOne(query);
             res.send(result);
         });
@@ -64,10 +63,14 @@ async function run() {
         });
         app.get("/blogs/:id", async (req, res) => {
             const id = req.params.id;
-            //console.log(id);
             const query = { _id: new ObjectId(id) };
-            //console.log(query);
             const result = await productCollection.findOne(query);
+            res.send(result);
+        });
+        app.delete("/blogs/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) };
+            const result = await blogCollection.deleteOne(query);
             res.send(result);
         });
 

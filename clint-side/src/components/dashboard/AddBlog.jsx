@@ -90,7 +90,7 @@ const AddBlog = () => {
                     <input
                         type="text"
                         name="productId"
-                        defaultValue={imageUrl}
+                        defaultValue={_id}
                         readOnly
                         placeholder=""
                         className="input input-bordered"
@@ -103,7 +103,7 @@ const AddBlog = () => {
                     <input
                         type="text"
                         name="imageUrl"
-                        defaultValue={_id}
+                        defaultValue={imageUrl}
                         readOnly
                         placeholder=""
                         className="input input-bordered"
