@@ -10,6 +10,7 @@ Frontend
 + DaisyUI
 + React Icons
 + React Hot Toast
++ Moment JS
 
 Backend
 ---
