@@ -19,7 +19,7 @@ const AddProduct = () => {
         };
         console.log(productDetails);
 
-        fetch(`${serverUrl}/addproduct`, {
+        fetch(`${serverUrl}/addblog`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(productDetails),
@@ -28,9 +28,7 @@ const AddProduct = () => {
             .then((data) => {
                 console.log(data);
                 if (data.insertedId) {
-                    toast.success(
-                        "'Add New Product' Successful !"
-                    );
+                    toast.success("'Add New Product' Successful !");
                     form.reset();
                 } else {
                     toast.error("'Add New Product' Failed !");
@@ -45,9 +43,6 @@ const AddProduct = () => {
             <form
                 className=""
                 onSubmit={handleAddProduct}
-                action="/dashboard/products"
-                method="post"
-                encType="multipart/form-data"
             >
                 <div className="form-control">
                     <label className="label">

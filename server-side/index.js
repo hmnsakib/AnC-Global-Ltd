@@ -31,12 +31,13 @@ async function run() {
         const productCollection = client
             .db("productsDb")
             .collection("products");
+        const blogCollection = client.db("blogsDb").collection("blogs");
 
         //----------http methods----------
         app.get("/", (req, res) => {
             res.send(" This is AnC Global Ltd server side");
         });
-
+        //----- product post, get, delete
         app.post("/addproduct", async (req, res) => {
             const newProduct = req.body;
             console.log("product added:", newProduct);
@@ -53,6 +54,24 @@ async function run() {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };
             const result = await productCollection.deleteOne(query);
+            res.send(result);
+        });
+        //----- blog post, get, delete
+        app.get("/blogs", async (req, res) => {
+            const result = await blogCollection.find().toArray();
+            res.send(result);
+        });
+        app.get("/blogs/:id", async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: new ObjectId(id) };
+            const result = await blogCollection.find(query);
+            res.send(result);
+        });
+
+        app.post("/addblog", async (req, res) => {
+            const newBlog = req.body;
+            console.log("product added:", newBlog);
+            const result = await blogCollection.insertOne(newBlog);
             res.send(result);
         });
 

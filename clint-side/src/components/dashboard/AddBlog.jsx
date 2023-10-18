@@ -1,15 +1,57 @@
 import JoditEditor from "jodit-react";
+import toast from "react-hot-toast";
 import { useRef, useState } from "react";
 
 const AddBlog = () => {
+    //const product = useLoaderData();
+    //console.log(id);
+    const serverUrl = "http://localhost:8000";
+    //fetch(`${serverUrl})/blogs/${id}`);
+
     const editor = useRef(null);
     const [content, setContent] = useState("");
+
+    const handleAddBlog = (event, productInfo) => {
+        console.log(productInfo);
+        event.preventDefault();
+        const form = event.target;
+        const productTitle = form.productTitle.value;
+        const productId = form.productId.value;
+        const imageUrl = form.imageUrl.value;
+        const blogTitle = form.blogTitle.value;
+        const blogBody = content;
+
+        const blogDetails = {
+            productTitle,
+            productId,
+            imageUrl,
+            blogTitle,
+            blogBody,
+        };
+        //console.log(blogDetails);
+
+        fetch(`${serverUrl}/addblog`, {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(blogDetails),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                    toast.success("'Add Blog' Successful !");
+                    form.reset();
+                } else {
+                    toast.error("'Add Blog' Failed !");
+                }
+            });
+    };
 
     return (
         <div className="m-8 p-8 w-10/12  bg-base-200 rounded-box">
             <h2 className="text-2xl mb-4 text-center">Add New Blog</h2>
-            <form className="">
-                <div className="form-control">
+            <form className="" onSubmit={handleAddBlog}>
+                {/* <div className="form-control">
                     <label className="label">
                         <span className="label-text text-lg">
                             Upload Image:
@@ -20,34 +62,61 @@ const AddBlog = () => {
                         name="image"
                         className="file-input w-full max-w-xs"
                     />
-                </div>
+                </div> */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text text-lg">Title:</span>
+                        <span className="label-text text-lg">
+                            Product Title:
+                        </span>
                     </label>
                     <input
                         type="text"
-                        name="title"
+                        name="productTitle"
+                        //defaultValue={}
                         placeholder=""
                         className="input input-bordered"
                     />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text text-lg">
-                            Select Product:
-                        </span>
+                        <span className="label-text text-lg">Product ID:</span>
                     </label>
-                    <select className="select select-bordered" name="type">
-                        <option disabled selected value="">
-                            Pick a Product
-                        </option>
-                        {/* have to add options from DB*/}
-                    </select>
+                    <input
+                        type="text"
+                        name="productId"
+                        //defaultValue={}
+                        placeholder=""
+                        className="input input-bordered"
+                    />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text text-lg">Title:</span>
+                        <span className="label-text text-lg">Image URL:</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="imageUrl"
+                        //defaultValue={}
+                        placeholder=""
+                        className="input input-bordered"
+                        required
+                    />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text text-lg">Blog Title:</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="blogTitle"
+                        placeholder=""
+                        className="input input-bordered"
+                    />
+                </div>
+
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text text-lg"> Blog Body:</span>
                     </label>
                     {/* <input
                         type="text"
@@ -57,6 +126,7 @@ const AddBlog = () => {
                     /> */}
                     <JoditEditor
                         ref={editor}
+                        //name={blogBody}
                         value={content}
                         onChange={(newContent) => setContent(newContent)}
                     />

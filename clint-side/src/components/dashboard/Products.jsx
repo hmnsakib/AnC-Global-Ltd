@@ -8,7 +8,7 @@ const Products = () => {
     const importedProducts = products.filter(
         (product) => product.productType === "Import"
     );
-    console.log(importedProducts);
+    //console.log(importedProducts);
 
     const exportedProducts = products.filter(
         (product) => product.productType === "Export"
