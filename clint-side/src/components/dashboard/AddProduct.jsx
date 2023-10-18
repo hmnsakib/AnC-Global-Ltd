@@ -19,7 +19,7 @@ const AddProduct = () => {
         };
         console.log(productDetails);
 
-        fetch(`${serverUrl}/addblog`, {
+        fetch(`${serverUrl}/addproduct`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(productDetails),
@@ -40,10 +40,7 @@ const AddProduct = () => {
         <div className="m-8 p-8 w-4/5  bg-base-200 rounded-box">
             <h2 className="text-2xl mb-4 text-center">Add New Product</h2>
 
-            <form
-                className=""
-                onSubmit={handleAddProduct}
-            >
+            <form className="" onSubmit={handleAddProduct}>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text text-lg">Title:</span>

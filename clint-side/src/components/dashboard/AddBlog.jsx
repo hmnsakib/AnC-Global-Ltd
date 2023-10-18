@@ -1,12 +1,14 @@
 import JoditEditor from "jodit-react";
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 
 const AddBlog = () => {
-    //const product = useLoaderData();
-    //console.log(id);
     const serverUrl = "http://localhost:8000";
-    //fetch(`${serverUrl})/blogs/${id}`);
+    const loadedproduct = useLoaderData();
+    //console.log(loadedproduct);
+    const { productTitle, imageUrl, _id } = loadedproduct;
+    //console.log(productTitle, imageUrl, _id);
 
     const editor = useRef(null);
     const [content, setContent] = useState("");
@@ -72,7 +74,8 @@ const AddBlog = () => {
                     <input
                         type="text"
                         name="productTitle"
-                        //defaultValue={}
+                        defaultValue={productTitle}
+                        readOnly
                         placeholder=""
                         className="input input-bordered"
                     />
@@ -84,7 +87,8 @@ const AddBlog = () => {
                     <input
                         type="text"
                         name="productId"
-                        //defaultValue={}
+                        defaultValue={imageUrl}
+                        readOnly
                         placeholder=""
                         className="input input-bordered"
                     />
@@ -96,7 +100,8 @@ const AddBlog = () => {
                     <input
                         type="text"
                         name="imageUrl"
-                        //defaultValue={}
+                        defaultValue={_id}
+                        readOnly
                         placeholder=""
                         className="input input-bordered"
                         required

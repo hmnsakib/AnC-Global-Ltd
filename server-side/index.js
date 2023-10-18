@@ -38,6 +38,11 @@ async function run() {
             res.send(" This is AnC Global Ltd server side");
         });
         //----- product post, get, delete
+        app.get("/products", async (req, res) => {
+            const result = await productCollection.find().toArray();
+            res.send(result);
+        });
+
         app.post("/addproduct", async (req, res) => {
             const newProduct = req.body;
             console.log("product added:", newProduct);
@@ -45,14 +50,10 @@ async function run() {
             res.send(result);
         });
 
-        app.get("/products", async (req, res) => {
-            const result = await productCollection.find().toArray();
-            res.send(result);
-        });
-
         app.delete("/products/:id", async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) };
+            //console.log(query);
             const result = await productCollection.deleteOne(query);
             res.send(result);
         });
@@ -63,8 +64,10 @@ async function run() {
         });
         app.get("/blogs/:id", async (req, res) => {
             const id = req.params.id;
+            //console.log(id);
             const query = { _id: new ObjectId(id) };
-            const result = await blogCollection.find(query);
+            //console.log(query);
+            const result = await productCollection.findOne(query);
             res.send(result);
         });
 
