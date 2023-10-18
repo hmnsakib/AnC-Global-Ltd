@@ -3,8 +3,6 @@ import Sidebar from "./Sidebar";
 import Sidebar2 from "./Sidebar2";
 import { Toaster } from "react-hot-toast";
 
-// import Sidebar from "./Sidebar";
-
 const Dashboard = () => {
     return (
         <div>

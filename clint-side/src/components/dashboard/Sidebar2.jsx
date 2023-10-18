@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Sidebar2 = () => {
     return (
-        <div className="bg-sky-200 p-10 shadow-xl w-1/5 h-screen">
+        <div className="bg-sky-200 p-10 shadow-xl w-1/5 h-auto">
             <ul className="text-2xl">
                 <li className="m-4">
                     <NavLink

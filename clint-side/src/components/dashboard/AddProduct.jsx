@@ -28,15 +28,18 @@ const AddProduct = () => {
             .then((data) => {
                 console.log(data);
                 if (data.insertedId) {
-                    toast.success("Product added successfully...");
+                    toast.success(
+                        "'Add New Product' Successful !"
+                    );
+                    form.reset();
                 } else {
-                    toast.error("Could not add product...");
+                    toast.error("'Add New Product' Failed !");
                 }
             });
     };
 
     return (
-        <div className="m-8 p-8 w-10/12  bg-base-200 rounded-box">
+        <div className="m-8 p-8 w-4/5  bg-base-200 rounded-box">
             <h2 className="text-2xl mb-4 text-center">Add New Product</h2>
 
             <form
@@ -96,8 +99,8 @@ const AddProduct = () => {
                         <option disabled selected>
                             Select a Type
                         </option>
-                        <option value="import">Import</option>
-                        <option value="export">Export</option>
+                        <option value="Import">Import</option>
+                        <option value="Export">Export</option>
                     </select>
                 </div>
                 <input

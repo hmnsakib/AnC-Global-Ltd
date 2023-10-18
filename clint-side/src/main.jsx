@@ -16,6 +16,9 @@ import AddBlog from "./components/dashboard/AddBlog.jsx";
 import Users from "./components/dashboard/Users.jsx";
 import ContactInfo from "./components/dashboard/ContactInfo.jsx";
 
+
+// url
+const serverUrl = "http://localhost:8000/";
 //routs
 const router = createBrowserRouter([
     {
@@ -51,6 +54,7 @@ const router = createBrowserRouter([
             {
                 path: "products",
                 element: <Products></Products>,
+                loader: () => fetch(`${serverUrl}products`),
             },
             {
                 path: "addproduct",
