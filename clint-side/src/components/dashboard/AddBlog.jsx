@@ -134,7 +134,6 @@ const AddBlog = () => {
                     /> */}
                     <JoditEditor
                         ref={editor}
-                        //name={blogBody}
                         value={content}
                         onChange={(newContent) => setContent(newContent)}
                     />

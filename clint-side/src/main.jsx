@@ -15,6 +15,8 @@ import AllBlogs from "./components/dashboard/AllBlogs.jsx";
 import AddBlog from "./components/dashboard/AddBlog.jsx";
 import Users from "./components/dashboard/Users.jsx";
 import ContactInfo from "./components/dashboard/ContactInfo.jsx";
+import AuthProvider from "./components/dashboard/AuthProvider";
+import PrivateRoute from "./components/dashboard/PrivateRoute";
 
 // url
 const serverUrl = "http://localhost:8000";
@@ -48,7 +50,7 @@ const router = createBrowserRouter([
     },
     {
         path: "dashboard",
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path: "products",
@@ -68,7 +70,8 @@ const router = createBrowserRouter([
                 path: "addblog/:id",
                 element: <AddBlog></AddBlog>,
                 //loader: fetch("http://localhost:8000/blogs/652fa94aad35598cb33a49d2"),
-                loader: ({ params }) => fetch(`${serverUrl}/blogs/${params.id}`),
+                loader: ({ params }) =>
+                    fetch(`${serverUrl}/blogs/${params.id}`),
             },
             {
                 path: "users",
@@ -84,6 +87,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <AuthProvider>
+            <RouterProvider router={router} />
+        </AuthProvider>
     </React.StrictMode>
 );

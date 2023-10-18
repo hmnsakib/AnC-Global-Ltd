@@ -28,7 +28,6 @@ const BlogCard = (blogs) => {
     function createMarkup() {
         return { __html: blogs.blogs.blogBody };
     }
-    //console.log(createMarkup());
 
     return (
         <div className="card bg-base-100 shadow-xl">
