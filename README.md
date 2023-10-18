@@ -1,19 +1,20 @@
-# AnC-Global-Ltd
+# AnC-Global-Ltd (www.ancgloballtd.com)
 Full-stack development
 
 Frontend
 ---
-+ ReactJS (Vite)
++ React JS (Vite)
 + React Router
 + Tailwind CSS
 + Jodit React
-+ DaisyUI
++ Daisy UI
 + React Icons
 + React Hot Toast
++ Moment JS
 
 Backend
 ---
-+ ExpressJS
-+ NodeJS
++ Express JS
++ Node JS
 + Cors
 + MongoDB
