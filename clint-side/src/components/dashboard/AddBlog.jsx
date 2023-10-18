@@ -2,6 +2,7 @@ import JoditEditor from "jodit-react";
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import moment from "moment";
 
 const AddBlog = () => {
     const serverUrl = "http://localhost:8000";
@@ -22,6 +23,7 @@ const AddBlog = () => {
         const imageUrl = form.imageUrl.value;
         const blogTitle = form.blogTitle.value;
         const blogBody = content;
+        const publishDate = moment().format("LL (LT)");
 
         const blogDetails = {
             productTitle,
@@ -29,6 +31,7 @@ const AddBlog = () => {
             imageUrl,
             blogTitle,
             blogBody,
+            publishDate,
         };
         //console.log(blogDetails);
 
