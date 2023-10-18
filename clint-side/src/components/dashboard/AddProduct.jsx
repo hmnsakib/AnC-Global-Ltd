@@ -1,7 +1,9 @@
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
     const serverUrl = "http://localhost:8000";
+    const navigate = useNavigate();
 
     const handleAddProduct = (event) => {
         event.preventDefault();
@@ -30,6 +32,7 @@ const AddProduct = () => {
                 if (data.insertedId) {
                     toast.success("'Add New Product' Successful !");
                     form.reset();
+                    navigate("/dashboard/products");
                 } else {
                     toast.error("'Add New Product' Failed !");
                 }

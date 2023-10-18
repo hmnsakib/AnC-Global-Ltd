@@ -1,12 +1,13 @@
 import JoditEditor from "jodit-react";
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import moment from "moment";
 
 const AddBlog = () => {
     const serverUrl = "http://localhost:8000";
     const loadedproduct = useLoaderData();
+    const navigate = useNavigate();
     //console.log(loadedproduct);
     const { productTitle, imageUrl, _id } = loadedproduct;
     //console.log(productTitle, imageUrl, _id);
@@ -46,6 +47,7 @@ const AddBlog = () => {
                 if (data.insertedId) {
                     toast.success("'Add Blog' Successful !");
                     form.reset();
+                    navigate("/dashboard/blogs");
                 } else {
                     toast.error("'Add Blog' Failed !");
                 }
