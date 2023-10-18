@@ -5,6 +5,7 @@ Frontend
 ---
 + React JS (Vite)
 + React Router
++ Firebase
 + Tailwind CSS
 + Jodit React
 + Daisy UI
