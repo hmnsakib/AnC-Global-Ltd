@@ -23,6 +23,7 @@ const AddBlog = () => {
         const productId = form.productId.value;
         const imageUrl = form.imageUrl.value;
         const blogTitle = form.blogTitle.value;
+        const videoUrl = form.videoUrl.value;
         const blogBody = content;
         const publishDate = moment().format("LL (LT)");
 
@@ -31,6 +32,7 @@ const AddBlog = () => {
             productId,
             imageUrl,
             blogTitle,
+            videoUrl,
             blogBody,
             publishDate,
         };
@@ -120,6 +122,7 @@ const AddBlog = () => {
                         type="text"
                         name="blogTitle"
                         placeholder=""
+                        required
                         className="input input-bordered"
                     />
                 </div>
@@ -137,7 +140,21 @@ const AddBlog = () => {
                     <JoditEditor
                         ref={editor}
                         value={content}
+                        required
                         onChange={(newContent) => setContent(newContent)}
+                    />
+                </div>
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text text-lg">
+                            Blog Video URL (Optional):
+                        </span>
+                    </label>
+                    <input
+                        type="text"
+                        name="videoUrl"
+                        placeholder="enter your embed youtube video link"
+                        className="input input-bordered"
                     />
                 </div>
                 <button className="btn btn-warning text-lg text-center my-8">

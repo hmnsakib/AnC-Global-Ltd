@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/frontend/Home.jsx";
+import Main from "./components/frontend/Main.jsx";
 import About from "./components/frontend/About.jsx";
 import Service from "./components/frontend/Service.jsx";
 import Blog from "./components/frontend/Blog.jsx";
@@ -24,18 +25,22 @@ const serverUrl = "http://localhost:8000";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Home></Home>,
+        element: <Main></Main>,
         children: [
+            {
+                path: "/",
+                element: <Home></Home>,
+            },
             {
                 path: "about",
                 element: <About></About>,
             },
             {
-                path: "service",
+                path: "services",
                 element: <Service></Service>,
             },
             {
-                path: "blog",
+                path: "blogs",
                 element: <Blog></Blog>,
             },
             {
@@ -50,7 +55,11 @@ const router = createBrowserRouter([
     },
     {
         path: "dashboard",
-        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        element: (
+            <PrivateRoute>
+                <Dashboard></Dashboard>
+            </PrivateRoute>
+        ),
         children: [
             {
                 path: "products",

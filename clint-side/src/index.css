@@ -3,5 +3,10 @@
 @tailwind utilities;
 
 .active {
-    @apply text-red-500 border-black font-bold
+    @apply text-red-500 border-black font-bold;
+}
+
+:root {
+    background-color: #EFF3F4;
+    font-size: 20px;
 }
