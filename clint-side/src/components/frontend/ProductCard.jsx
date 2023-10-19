@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 const ProductCard = ({ product }) => {
     const whatapp = "https://wa.me/+8801798759422";
     //console.log(product);
+    const id = product._id;
 
     return (
         <div className="card w-92 bg-base-100 shadow-xl">
@@ -22,7 +23,7 @@ const ProductCard = ({ product }) => {
                         Call for Price
                     </Link>
                     <Link
-                        to="blogs"
+                        to= {`/blogs/${id}`}
                         className="btn btn-outline btn-info text-white"
                     >
                         See Blog

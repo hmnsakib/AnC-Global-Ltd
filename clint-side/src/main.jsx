@@ -7,6 +7,7 @@ import Main from "./components/frontend/Main.jsx";
 import About from "./components/frontend/About.jsx";
 import Service from "./components/frontend/Service.jsx";
 import Blog from "./components/frontend/Blog.jsx";
+import BlogDetails from "./components/frontend/BlogDetails.jsx";
 import Contact from "./components/frontend/Contact.jsx";
 import Login from "./components/dashboard/Login.jsx";
 import Dashboard from "./components/dashboard/Dashboard.jsx";
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path: "blogs",
                 element: <Blog></Blog>,
+            },
+            {
+                path: "/blogs/:id",
+                element: <BlogDetails></BlogDetails>,
             },
             {
                 path: "contact",
