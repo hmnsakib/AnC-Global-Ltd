@@ -3,8 +3,8 @@ import finalLogo from "../../assets/final_logo.png";
 
 const Footer = () => {
     return (
-        <div className="bg-white px-48">
-            <div className="grid grid-cols-3 gap-5 mt-20 pt-10 justify-between justify-items-center items-end">
+        <div className="bg-white px-8 lg:px-48">
+            <div className="grid lg:grid-cols-3 gap-5 mt-5 lg:mt-20 pt-5 lg:pt-10 lg:justify-between lg:justify-items-center lg:items-end">
                 <div>
                     <img src={finalLogo} alt="" />
                     <p className="mt-5">
@@ -48,8 +48,8 @@ const Footer = () => {
             </div>
             <div className="divider"></div>
             <p className="text-center">
-                © Copyright 2022-Present, All Rights Reserved by Anc Global
-                (Ptv) Ltd
+                © Copyright 2022-Present, All Rights Reserved by AnC Global
+                (Pvt.) Ltd
             </p>
         </div>
     );

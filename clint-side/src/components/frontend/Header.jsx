@@ -5,7 +5,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const Header = () => {
     const whatapp = "https://wa.me/+8801798759422";
     return (
-        <div className="bg-white px-48">
+        <div className="bg-white px-8 lg:px-48">
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -46,7 +46,7 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
-                    <Link to="/">
+                    <Link className="hidden md:block" to="/">
                         <img className="h-12 w-32" src={logo} alt="" />
                     </Link>
                 </div>

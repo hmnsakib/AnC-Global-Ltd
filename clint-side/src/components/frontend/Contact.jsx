@@ -1,9 +1,11 @@
 const Contact = () => {
     return (
-        <div className="px-48 mt-20">
-            <h1 className="text-3xl font-bold text-center">Mail Us!</h1>
+        <div className="px-8 lg:px-48 mt-5 lg:mt-20">
+            <h1 className="text-lg lg:text-2xl font-bold text-center">
+                Mail Us!
+            </h1>
             <form className="">
-                <div className=" grid grid-cols-2 gap-5">
+                <div className=" grid lg:grid-cols-2 lg:gap-5">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Your Name:</span>
@@ -55,7 +57,7 @@ const Contact = () => {
                 </div>
                 <div className="form-control mt-6">
                     <input
-                        className="btn btn-primary"
+                        className="btn bg-[#4FACD7] text-white mb-5"
                         type="submit"
                         value="Send Mail"
                     />

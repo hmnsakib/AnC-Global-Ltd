@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import PropTypes from "prop-types";
-import BlogDetails from "./BlogDetails";
 
 const ProductCard = ({ product }) => {
     const whatapp = "https://wa.me/+8801798759422";

@@ -3,11 +3,11 @@ import home4 from "../../assets/home4.png";
 
 const About = () => {
     return (
-        <div className="px-48">
-            <div className="my-20">
+        <div className="px-8 lg:px-48">
+            <div className="my-5 lg:my-20">
                 {/* 2nd top */}
-                <div className="mb-5 text-center w-2/4 mx-auto">
-                    <h1 className="text-[#4FACD7] text-6xl mb-5">
+                <div className="mb-5 text-center lg:w-2/4 mx-auto">
+                    <h1 className="text-[#4FACD7] text-3xl lg:text-6xl mb-5">
                         Our Services
                     </h1>
                     <p>
@@ -17,14 +17,18 @@ const About = () => {
                     </p>
                 </div>
                 {/* 2nd bottom */}
-                <div className="flex gap-5">
+                <div className="lg:flex gap-5">
                     <div className="">
                         <div>
                             <img src={home3} alt="" />
                         </div>
                         <div>
-                            <h1>
-                                Effortlessly Source Global Goods with Our Import
+                            <h1 className="mb-5">
+                                Effortlessly Source Global Goods with Our
+                                <span className="text-[#4FACD7] font-semibold">
+                                    {" "}
+                                    Import{" "}
+                                </span>
                                 Expertise.
                             </h1>
                             <p>
@@ -39,10 +43,17 @@ const About = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="">
+                    <div className="lg:flex lg:flex-col-reverse">
                         <div>
-                            <h1>
-                                Effortlessly Source Global Goods with Our Import
+                            <img src={home4} alt="" />
+                        </div>
+                        <div>
+                            <h1 className="mb-5">
+                                Effortlessly Source Global Goods with Our{" "}
+                                <span className="text-[#4FACD7] font-semibold">
+                                    {" "}
+                                    Export{" "}
+                                </span>
                                 Expertise.
                             </h1>
                             <p>
@@ -55,9 +66,6 @@ const About = () => {
                                 business can thrive with ease in the global
                                 marketplace.
                             </p>
-                        </div>
-                        <div>
-                            <img src={home4} alt="" />
                         </div>
                     </div>
                 </div>

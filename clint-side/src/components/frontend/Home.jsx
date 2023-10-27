@@ -35,16 +35,16 @@ const Home = () => {
     //console.log(blogs);
 
     return (
-        <div className="px-48">
-            {/* 1st section */}
-            <div className="my-20 flex items-center gap-5">
+        <div className="px-8 lg:px-48">
+            {/* 1st section- Hero */}
+            <div className="my-5 lg:my-20 lg:flex items-center gap-5">
                 {/* 1st left */}
-                <div className="w-720px">
-                    <div className=" py-10">
+                <div className="">
+                    <div className="py-3 lg:py-12">
                         <p className="mb-5 text-[#4FACD7]">
                             All kind of import-export items
                         </p>
-                        <h1 className="text-6xl font-semibold mb-5">
+                        <h1 className="text-3xl lg:text-6xl font-semibold mb-5">
                             A trustworthy <br />
                             <span className="text-[#4FACD7] font-bold">
                                 Importer Exporter
@@ -61,13 +61,13 @@ const Home = () => {
                     <div>
                         <Link
                             to="service"
-                            className="btn bg-[#4FACD7] text-white mr-5"
+                            className="btn bg-[#4FACD7] text-white mr-5 mb-5"
                         >
                             Our Procuct
                         </Link>
                         <Link
                             to={whatapp}
-                            className="btn btn-outline btn-info text-white"
+                            className="btn btn-outline btn-info text-white mr-5 mb-5"
                         >
                             <FaWhatsapp />
                             Call for Price
@@ -80,11 +80,11 @@ const Home = () => {
                 </div>
             </div>
             <div className="divider"></div>
-            {/* 2nd section */}
-            <div className="my-20">
+            {/* 2nd section- Our Services */}
+            <div className="my-5 lg:my-20">
                 {/* 2nd top */}
-                <div className="mb-5 text-center w-2/4 mx-auto">
-                    <h1 className="text-[#4FACD7] text-6xl mb-5">
+                <div className="mb-5 text-center lg:w-2/4 mx-auto">
+                    <h1 className="text-[#4FACD7] text-3xl lg:text-6xl mb-5">
                         Our Services
                     </h1>
                     <p>
@@ -94,14 +94,18 @@ const Home = () => {
                     </p>
                 </div>
                 {/* 2nd bottom */}
-                <div className="flex gap-5">
+                <div className="lg:flex gap-5">
                     <div className="">
                         <div>
                             <img src={home3} alt="" />
                         </div>
                         <div>
-                            <h1>
-                                Effortlessly Source Global Goods with Our Import
+                            <h1 className="mb-5">
+                                Effortlessly Source Global Goods with Our
+                                <span className="text-[#4FACD7] font-semibold">
+                                    {" "}
+                                    Import{" "}
+                                </span>
                                 Expertise.
                             </h1>
                             <p>
@@ -116,10 +120,17 @@ const Home = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="">
+                    <div className="lg:flex lg:flex-col-reverse">
                         <div>
-                            <h1>
-                                Effortlessly Source Global Goods with Our Import
+                            <img src={home4} alt="" />
+                        </div>
+                        <div>
+                            <h1 className="mb-5">
+                                Effortlessly Source Global Goods with Our{" "}
+                                <span className="text-[#4FACD7] font-semibold">
+                                    {" "}
+                                    Export{" "}
+                                </span>
                                 Expertise.
                             </h1>
                             <p>
@@ -132,19 +143,16 @@ const Home = () => {
                                 business can thrive with ease in the global
                                 marketplace.
                             </p>
-                        </div>
-                        <div>
-                            <img src={home4} alt="" />
                         </div>
                     </div>
                 </div>
             </div>
             <div className="divider"></div>
-            {/* 3rd section */}
-            <div className="my-20">
+            {/* 3rd section- Our Products */}
+            <div className="my-5 lg:my-20">
                 {/* 3rd top */}
-                <div className="mb-5 text-center w-2/4 mx-auto">
-                    <h1 className="text-[#4FACD7] text-6xl mb-5">
+                <div className="mb-5 text-center lg:w-2/4 mx-auto">
+                    <h1 className="text-[#4FACD7] text-3xl lg:text-6xl mb-5">
                         Our Products
                     </h1>
                     <p>
@@ -154,7 +162,7 @@ const Home = () => {
                     </p>
                 </div>
                 {/* 3rd bottom */}
-                <div className="grid grid-cols-3 gap-5">
+                <div className="grid lg:grid-cols-3 gap-5">
                     {products.slice(0, 6).map((product) => (
                         <ProductCard
                             key={product._id}
@@ -164,11 +172,13 @@ const Home = () => {
                 </div>
             </div>
             <div className="divider"></div>
-            {/* 4th section */}
-            <div className="my-20">
+            {/* 4th section- Our Blogs */}
+            <div className="my-5 lg:my-20">
                 {/* 3rd top */}
-                <div className="mb-5 text-center w-2/4 mx-auto">
-                    <h1 className="text-[#4FACD7] text-6xl mb-5">Our Blogs</h1>
+                <div className="mb-5 text-center lg:w-2/4 mx-auto">
+                    <h1 className="text-[#4FACD7] text-3xl lg:text-6xl mb-5">
+                        Our Blogs
+                    </h1>
                     <p>
                         Import and export are fundamental pillars of
                         international trade, facilitating the exchange of goods
@@ -176,18 +186,18 @@ const Home = () => {
                     </p>
                 </div>
                 {/* 3rd bottom */}
-                <div className="grid grid-cols-3 gap-5">
+                <div className="grid lg:grid-cols-3 gap-5">
                     {blogs.slice(0, 3).map((blog) => (
                         <BlogCard key={blog._id} blog={blog}></BlogCard>
                     ))}
                 </div>
             </div>
             <div className="divider"></div>
-            {/* 4th section */}
-            <div className="my-20">
+            {/* 4th section- Watch Our Videos */}
+            <div className="my-5 hidden md:block lg:my-20">
                 {/* 3rd top */}
-                <div className="mb-5 text-center w-2/4 mx-auto">
-                    <h1 className="text-[#4FACD7] text-6xl mb-5">
+                <div className="mb-5 text-center lg:w-2/4 mx-auto">
+                    <h1 className="text-[#4FACD7] text-3xl lg:text-6xl mb-5">
                         Watch Our Videos
                     </h1>
                     <p>
@@ -197,7 +207,7 @@ const Home = () => {
                     </p>
                 </div>
                 {/* 3rd bottom */}
-                <div className="grid grid-cols-2 gap-5">
+                <div className="grid lg:grid-cols-2 gap-5">
                     {}
                     {blogs.map((blog) => (
                         <VideoCard key={blog._id} blog={blog}></VideoCard>
