@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 
 const Service = () => {
-    const serverUrl = "http://localhost:8000";
+    const serverUrl = "https://anc-global-ltd-server-side.vercel.app";
     const [products, setProducts] = useState([]);
 
     //---------PRODUCTS FETCH ----------

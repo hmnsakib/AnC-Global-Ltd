@@ -5,7 +5,7 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import moment from "moment";
 
 const AddBlog = () => {
-    const serverUrl = "http://localhost:8000";
+    const serverUrl = "https://anc-global-ltd-server-side.vercel.app";
     const loadedproduct = useLoaderData();
     const navigate = useNavigate();
     //console.log(loadedproduct);

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 //import AddBlog from "./AddBlog";
 
 const ProductCard = (product) => {
-    const serverUrl = "http://localhost:8000";
+    const serverUrl = "https://anc-global-ltd-server-side.vercel.app";
     const id = product.product._id;
 
     const handleDelete = (id) => {

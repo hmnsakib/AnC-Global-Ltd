@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 
 const Blog = () => {
-    const serverUrl = "http://localhost:8000";
+    const serverUrl = "https://anc-global-ltd-server-side.vercel.app";
     const [blogs, setBlogs] = useState([]);
 
     //------------BLOG FETCH----------------
@@ -24,7 +24,7 @@ const Blog = () => {
                 <p className="text-2xl"># Number of Blogs: {blogs.length}</p>
                 <hr />
             </div>
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-2 gap-5">
                 {blogs.map((product) => (
                     <ProductCard
                         key={product._id}

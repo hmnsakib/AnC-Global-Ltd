@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 
 const BlogCard = (blogs) => {
     //console.log(blogs);
-    const serverUrl = "http://localhost:8000";
+    const serverUrl = "https://anc-global-ltd-server-side.vercel.app";
     const id = blogs.blogs._id;
 
     const handleDelete = (id) => {

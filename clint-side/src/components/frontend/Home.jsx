@@ -10,7 +10,7 @@ import VideoCard from "./VideoCard";
 
 const Home = () => {
     const whatapp = "https://wa.me/+8801798759422";
-    const serverUrl = "http://localhost:8000";
+    const serverUrl = "https://anc-global-ltd-server-side.vercel.app";
     const [products, setProducts] = useState([]);
     const [blogs, setBlogs] = useState([]);
 
@@ -205,7 +205,6 @@ const Home = () => {
                 </div>
             </div>
             {/* footer */}
-            
         </div>
     );
 };

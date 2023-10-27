@@ -2,7 +2,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
-    const serverUrl = "http://localhost:8000";
+    const serverUrl = "https://anc-global-ltd-server-side.vercel.app";
     const navigate = useNavigate();
 
     const handleAddProduct = (event) => {

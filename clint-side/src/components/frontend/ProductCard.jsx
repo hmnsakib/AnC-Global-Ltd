@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import PropTypes from "prop-types";
+import BlogDetails from "./BlogDetails";
 
 const ProductCard = ({ product }) => {
     const whatapp = "https://wa.me/+8801798759422";
     //console.log(product);
-    const id = product._id;
+    //const id = product._id;
+    //console.log(id);
 
     return (
         <div className="card w-92 bg-base-100 shadow-xl">
@@ -23,7 +25,7 @@ const ProductCard = ({ product }) => {
                         Call for Price
                     </Link>
                     <Link
-                        to= {`/blogs/${id}`}
+                        to="/blogs"
                         className="btn btn-outline btn-info text-white"
                     >
                         See Blog
