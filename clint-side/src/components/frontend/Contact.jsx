@@ -1,10 +1,39 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
+
 const Contact = () => {
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm(
+                `${import.meta.env.VITE_EMAILJS_SERVICE_ID}`,
+                `${import.meta.env.VITE_EMAILJS_TEMPLATE_ID}`,
+                form.current,
+                `${import.meta.env.VITE_EMAILJS_PUBLIC_KEY}`
+            )
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    toast.success("'Send Mail' Successful !");
+                    e.target.reset();
+                },
+                (error) => {
+                    console.log(error.text);
+                    toast.error("'Send Mail' Failed !");
+                }
+            );
+    };
+
     return (
         <div className="px-8 lg:px-48 mt-5 lg:mt-20">
             <h1 className="text-lg lg:text-2xl font-bold text-center">
                 Mail Us!
             </h1>
-            <form className="">
+            <form className="" ref={form} onSubmit={sendEmail}>
                 <div className=" grid lg:grid-cols-2 lg:gap-5">
                     <div className="form-control">
                         <label className="label">
@@ -13,7 +42,7 @@ const Contact = () => {
                         <input
                             type="text"
                             placeholder="enter your name"
-                            name="name"
+                            name="user_name"
                             className="input input-bordered"
                             required
                         />
@@ -25,7 +54,7 @@ const Contact = () => {
                         <input
                             type="email"
                             placeholder="enter your email"
-                            name="email"
+                            name="user_email"
                             className="input input-bordered"
                             required
                         />
@@ -63,6 +92,10 @@ const Contact = () => {
                     />
                 </div>
             </form>
+            <Toaster
+                position="bottom-center"
+                toastOptions={{ duration: 5000 }}
+            />
         </div>
     );
 };
