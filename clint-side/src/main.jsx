@@ -21,7 +21,7 @@ import AuthProvider from "./components/dashboard/AuthProvider";
 import PrivateRoute from "./components/dashboard/PrivateRoute";
 
 // url
-const serverUrl = "https://anc-global-ltd-server-side.vercel.app";
+const serverUrl = "https://anc-global-ltd-server-side.onrender.com";
 //routs
 const router = createBrowserRouter([
     {
